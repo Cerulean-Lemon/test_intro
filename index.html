@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marvel Assemble Banner</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: "Segoe UI", sans-serif;
+        background-color: #0d0d0d;
+        color: #fff;
+      }
+      /* HEADER */
+      header {
+        background-color: #111;
+        border-bottom: 2px solid #e62429;
+      }
+      .header-inner {
+        width: 100%;
+        max-width: 1100px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 16px 0;
+      }
+      .logo {
+        font-size: 28px;
+        font-weight: 900;
+        color: #e62429;
+        margin-left: -300px; /* 추가 */
+      }
+      nav ul {
+        display: flex;
+        list-style: none;
+        gap: 32px;
+      }
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 14px;
+        transition: color 0.3s;
+      }
+      nav ul li a:hover {
+        color: #e62429;
+      }
+
+      /* BANNER SECTION */
+      .section-divider {
+        border-top: 2px solid #e62429;
+        border-bottom: 2px solid #e62429;
+        background-color: #0d0d0d;
+      }
+
+      .main-visual {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 750px;
+        margin: 0 auto;
+        background: url("background.jpg") no-repeat center center/cover;
+      }
+
+      .text-area {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 60px 80px 60px 80px;
+        align-items: flex-start;
+      }
+
+      .text-area h1 {
+        font-size: 64px;
+        margin-bottom: 20px;
+      }
+      .text-area p {
+        font-size: 18px;
+        color: #ccc;
+        margin-bottom: 30px;
+      }
+      .text-area .btn {
+        display: inline-block;
+        padding: 12px 24px;
+        background-color: #e62429;
+        color: #fff;
+        font-weight: bold;
+        text-decoration: none;
+        border-radius: 4px;
+      }
+
+      .visual-area {
+        flex: 1;
+        position: relative;
+        overflow: visible;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-start;
+        padding-top: 20px;
+        padding-right: 100px;
+      }
+      .hero {
+        position: absolute;
+        transform: scale(0.9);
+        opacity: 0;
+        transition: 0.3s;
+      }
+      .호크아이 {
+        left: 40px;
+        top: 40px;
+        z-index: 1;
+      }
+      .블랙위도우 {
+        left: 200px;
+        top: -40px;
+        z-index: 2;
+      }
+      .헐크 {
+        left: 550px;
+        bottom: 100px;
+        z-index: 2;
+      }
+      .캡틴 {
+        left: -150px;
+        top: 98px;
+        z-index: 3;
+      }
+      .토르 {
+        left: 520px;
+        top: 70px;
+        width: 50%;
+        height: 95%;
+        z-index: 3;
+      }
+      .아이언맨 {
+        left: 150px;
+        top: 244px;
+        z-index: 4;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header-inner">
+        <div class="logo">MARVEL</div>
+        <nav>
+          <ul>
+            <li><a href="#">NEWS</a></li>
+            <li><a href="#">COMICS</a></li>
+            <li><a href="#">CHARACTERS</a></li>
+            <li><a href="#">MOVIES</a></li>
+            <li><a href="#">TV SHOWS</a></li>
+            <li><a href="#">GAMES</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section class="section-divider">
+      <div class="main-visual">
+        <div class="text-area">
+          <h1>THE AVENGERS</h1>
+          <p>
+            United they stand. Meet Earth's mightiest heroes ready to save the
+            world once again.
+          </p>
+          <a href="#" class="btn">WATCH NOW</a>
+        </div>
+        <div class="visual-area">
+          <img src="호크아이.png" class="hero 호크아이" alt="호크아이" />
+          <img src="블랙위도우.png" class="hero 블랙위도우" alt="블랙 위도우" />
+          <img src="헐크.png" class="hero 헐크" alt="헐크" />
+          <img src="캡틴.png" class="hero 캡틴" alt="캡틴 아메리카" />
+          <img src="토르.png" class="hero 토르" alt="토르" />
+          <img src="아이언맨.png" class="hero 아이언맨" alt="아이언맨" />
+        </div>
+      </div>
+    </section>
+
+    <script>
+      const tl = gsap.timeline({
+        defaults: { duration: 0.6, ease: "power2.out" },
+      });
+
+      tl.to(".아이언맨", { opacity: 1, scale: 1 })
+        .to(".캡틴", { opacity: 1 })
+        .to(".토르", { opacity: 1 })
+        .to(".블랙위도우", { opacity: 1 })
+        .to(".호크아이", { opacity: 1 })
+        .to(".헐크", { opacity: 1 });
+    </script>
+  </body>
+</html>
